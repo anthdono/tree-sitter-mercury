@@ -29,6 +29,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "conditional_keyword"
+        },
+        {
+          "type": "SYMBOL",
           "name": "string"
         },
         {
@@ -393,6 +397,31 @@
         {
           "type": "STRING",
           "value": "is"
+        }
+      ]
+    },
+    "conditional_keyword": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "try"
+        },
+        {
+          "type": "STRING",
+          "value": "then"
+        },
+        {
+          "type": "STRING",
+          "value": "catch"
+        },
+        {
+          "type": "STRING",
+          "value": "if"
+        },
+        {
+          "type": "STRING",
+          "value": "else"
         }
       ]
     },

@@ -3,34 +3,23 @@ module.exports = grammar({
 
     rules: {
         source_file: ($) => repeat($._definition),
-
         _definition: ($) =>
             choice(
                 $.main_predicate,
                 $.declaration,
                 $.operator,
                 $.keyword,
+                $.conditional_keyword,
                 $.string,
                 $.comment,
                 $.type,
                 $.boolean_literal,
-                $.identifier,
+                $.identifier
             ),
-
         main_predicate: ($) =>
-            seq(
-                alias("main", $.identifier),
-                $.predicate_arguments,
-                ":-"
-            ),
-
+            seq(alias("main", $.identifier), $.predicate_arguments, ":-"),
         predicate_definition: ($) =>
-            seq(
-                $.uppercase_identifier,
-                $.predicate_arguments,
-                ":-"
-            ),
-
+            seq($.uppercase_identifier, $.predicate_arguments, ":-"),
         predicate_arguments: ($) =>
             seq(
                 "(",
@@ -38,15 +27,9 @@ module.exports = grammar({
                 ")"
             ),
 
-        argument: ($) =>
-            choice(
-                $.identifier,
-                seq("!", $.identifier)
-            ),
-
+        argument: ($) => choice($.identifier, seq("!", $.identifier)),
         declaration: ($) =>
             prec(1, seq(":-", $.keyword, choice($.identifier, $.type), ".")),
-
         predicate: ($) =>
             seq(
                 $.uppercase_identifier,
@@ -58,16 +41,8 @@ module.exports = grammar({
 
         predicate_arguments: ($) =>
             seq("(", optional(seq($.term, repeat(seq(",", $.term)))), ")"),
-
-        term: ($) =>
-            choice(
-                $.identifier,
-                $.number,
-                $.string
-            ),
-
+        term: ($) => choice($.identifier, $.number, $.string),
         goal_expression: ($) => choice(),
-
         type: ($) =>
             choice(
                 "bool",
@@ -86,11 +61,7 @@ module.exports = grammar({
             ),
         operator: ($) => choice(":-"),
         identifier: ($) => /[a-z_][a-zA-Z0-9_]*/,
-        boolean_literal: ($) =>
-            choice(
-                seq("yes"),
-                seq("no")
-            ),
+        boolean_literal: ($) => choice(seq("yes"), seq("no")),
         uppercase_identifier: ($) => /[A-Z][a-zA-Z0-9_]*/,
         number: ($) => /(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?|0[xX][0-9a-fA-F]+/,
         keyword: ($) =>
@@ -103,6 +74,8 @@ module.exports = grammar({
                 "type",
                 "is"
             ),
+        conditional_keyword: ($) =>
+            choice("try", "then", "catch", "if", "else"),
         unescaped_double_string_fragment: ($) =>
             token.immediate(prec(1, /[^"\\]+/)),
         unescaped_single_string_fragment: ($) =>

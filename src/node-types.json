@@ -10,6 +10,11 @@
     "fields": {}
   },
   {
+    "type": "conditional_keyword",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "declaration",
     "named": true,
     "fields": {},
@@ -95,6 +100,10 @@
         },
         {
           "type": "comment",
+          "named": true
+        },
+        {
+          "type": "conditional_keyword",
           "named": true
         },
         {
@@ -212,6 +221,14 @@
     "named": false
   },
   {
+    "type": "catch",
+    "named": false
+  },
+  {
+    "type": "else",
+    "named": false
+  },
+  {
     "type": "escape_sequence",
     "named": true
   },
@@ -226,6 +243,10 @@
   {
     "type": "identifier",
     "named": true
+  },
+  {
+    "type": "if",
+    "named": false
   },
   {
     "type": "implementation",
@@ -278,6 +299,14 @@
   {
     "type": "string_fragment",
     "named": true
+  },
+  {
+    "type": "then",
+    "named": false
+  },
+  {
+    "type": "try",
+    "named": false
   },
   {
     "type": "type",
