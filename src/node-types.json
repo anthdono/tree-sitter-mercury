@@ -1,6 +1,48 @@
 [
   {
-    "type": "boolean_literal",
+    "type": "argument",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "arguments",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "type",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "arguments",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "argument",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "builtin_type",
     "named": true,
     "fields": {}
   },
@@ -10,18 +52,97 @@
     "fields": {}
   },
   {
-    "type": "conditional_keyword",
+    "type": "constraint",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "predicate",
+          "named": true
+        }
+      ]
+    }
   },
   {
-    "type": "declaration",
+    "type": "constraints",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "constraint",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "declaration",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "import_declaration",
+          "named": true
+        },
+        {
+          "type": "interface_declaration",
+          "named": true
+        },
+        {
+          "type": "module_declaration",
+          "named": true
+        },
+        {
+          "type": "predicate_declaration",
+          "named": true
+        },
+        {
+          "type": "type_declaration",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "determinism",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "end",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "identifier",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "import_declaration",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "declaration_operator",
+          "named": true
+        },
+        {
+          "type": "end",
+          "named": true
+        },
         {
           "type": "identifier",
           "named": true
@@ -38,17 +159,7 @@
     }
   },
   {
-    "type": "goal_expression",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "keyword",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "main_predicate",
+    "type": "interface_declaration",
     "named": true,
     "fields": {},
     "children": {
@@ -56,35 +167,164 @@
       "required": true,
       "types": [
         {
-          "type": "identifier",
+          "type": "declaration_operator",
           "named": true
         },
         {
-          "type": "predicate_arguments",
+          "type": "keyword",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "operator",
+    "type": "keyword",
     "named": true,
     "fields": {}
   },
   {
-    "type": "predicate_arguments",
+    "type": "module_declaration",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
-          "type": "term",
+          "type": "declaration_operator",
+          "named": true
+        },
+        {
+          "type": "end",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "keyword",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "parameter",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "arguments",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "keyword",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "parameters",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "parameter",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "predicate",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "arguments",
+          "named": true
+        },
+        {
+          "type": "determinism",
+          "named": true
+        },
+        {
+          "type": "end",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "predicate_declaration",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "constraints",
+          "named": true
+        },
+        {
+          "type": "declaration_operator",
+          "named": true
+        },
+        {
+          "type": "determinism",
+          "named": true
+        },
+        {
+          "type": "end",
+          "named": true
+        },
+        {
+          "type": "keyword",
+          "named": true
+        },
+        {
+          "type": "parameters",
+          "named": true
+        },
+        {
+          "type": "predicate_identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "predicate_identifier",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "source_file",
@@ -95,19 +335,45 @@
       "required": false,
       "types": [
         {
-          "type": "boolean_literal",
-          "named": true
-        },
-        {
           "type": "comment",
           "named": true
         },
         {
-          "type": "conditional_keyword",
+          "type": "declaration",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "builtin_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "type_declaration",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "declaration_operator",
           "named": true
         },
         {
-          "type": "declaration",
+          "type": "end",
           "named": true
         },
         {
@@ -119,15 +385,42 @@
           "named": true
         },
         {
-          "type": "main_predicate",
-          "named": true
-        },
-        {
           "type": "operator",
           "named": true
         },
         {
-          "type": "string",
+          "type": "parameters",
+          "named": true
+        },
+        {
+          "type": "type",
+          "named": true
+        },
+        {
+          "type": "type_declaration_union_types",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "type_declaration_union_types",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "arguments",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "operator",
           "named": true
         },
         {
@@ -136,57 +429,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "string",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "escape_sequence",
-          "named": true
-        },
-        {
-          "type": "string_fragment",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "term",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "type",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "!",
-    "named": false
   },
   {
     "type": "\"",
@@ -213,7 +455,11 @@
     "named": false
   },
   {
-    "type": ":-",
+    "type": "::",
+    "named": false
+  },
+  {
+    "type": "<=",
     "named": false
   },
   {
@@ -221,19 +467,43 @@
     "named": false
   },
   {
-    "type": "catch",
+    "type": "cc_multi",
     "named": false
   },
   {
-    "type": "else",
+    "type": "cc_nondet",
     "named": false
   },
   {
-    "type": "escape_sequence",
+    "type": "char",
+    "named": false
+  },
+  {
+    "type": "declaration_operator",
     "named": true
   },
   {
+    "type": "det",
+    "named": false
+  },
+  {
+    "type": "di",
+    "named": false
+  },
+  {
+    "type": "equality_operator",
+    "named": true
+  },
+  {
+    "type": "erroneous",
+    "named": false
+  },
+  {
     "type": "exception",
+    "named": false
+  },
+  {
+    "type": "failure",
     "named": false
   },
   {
@@ -241,27 +511,11 @@
     "named": false
   },
   {
-    "type": "identifier",
-    "named": true
-  },
-  {
-    "type": "if",
-    "named": false
-  },
-  {
-    "type": "implementation",
-    "named": false
-  },
-  {
-    "type": "import_module",
+    "type": "in",
     "named": false
   },
   {
     "type": "int",
-    "named": false
-  },
-  {
-    "type": "interface",
     "named": false
   },
   {
@@ -277,19 +531,27 @@
     "named": false
   },
   {
-    "type": "module",
+    "type": "multi",
     "named": false
   },
   {
-    "type": "no",
+    "type": "nondet",
     "named": false
   },
   {
-    "type": "number",
+    "type": "operator",
     "named": true
   },
   {
-    "type": "pred",
+    "type": "or_operator",
+    "named": true
+  },
+  {
+    "type": "out",
+    "named": false
+  },
+  {
+    "type": "semidet",
     "named": false
   },
   {
@@ -297,31 +559,23 @@
     "named": false
   },
   {
-    "type": "string_fragment",
+    "type": "string_escape_sequence",
     "named": true
   },
   {
-    "type": "then",
-    "named": false
-  },
-  {
-    "type": "try",
-    "named": false
-  },
-  {
-    "type": "type",
-    "named": false
-  },
-  {
-    "type": "uppercase_identifier",
+    "type": "substring",
     "named": true
   },
   {
-    "type": "where",
+    "type": "union_type_constructor_operator",
+    "named": true
+  },
+  {
+    "type": "uo",
     "named": false
   },
   {
-    "type": "yes",
-    "named": false
+    "type": "variable",
+    "named": true
   }
 ]

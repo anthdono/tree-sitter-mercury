@@ -1,27 +1,40 @@
 (comment) @comment
 
-
-(string) @string
-
-(boolean_literal) @boolean
-
-(conditional_keyword) @conditional
-
-(main_predicate
-  (identifier) @function
-)
+(keyword) @keyword
+; (conditional) @conditional
 
 (number) @number
 
-(keyword) @keyword
+(builtin_type) @type
 
-(declaration
-  (keyword) @keyword
-)
+; (variable) @variable
 
-(operator) @operator
+; (variable) @variable
+; (custom_type) @text
+; (predicate_identifier) @function
 
-(type) @type
+; (string) @string
 
-(identifier) @identifier
+; (boolean_literal) @boolean
+
+
+; (conditional_keyword) @conditional
+
+
+; (main_predicate
+;   (identifier) @function
+; )
+
+
+; (keyword) @keyword
+
+; (declaration
+;   (keyword) @keyword
+; )
+
+; (operator) @operator
+; 
+; (type) @type
+; 
+; (identifier) @identifier
 
