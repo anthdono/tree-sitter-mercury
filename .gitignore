@@ -1,1 +1,4 @@
 .ccls-cache
+node_modules
+.obsidian
+**.DS_Store
