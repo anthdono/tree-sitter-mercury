@@ -1,0 +1,15 @@
+{
+  "baseFontSize": 16.5,
+  "cssTheme": "Things",
+  "translucency": true,
+  "baseFontSizeAction": false,
+  "enabledCssSnippets": [
+    "fonts"
+  ],
+  "interfaceFontFamily": "Helvetica Now Text ",
+  "textFontFamily": "Helvetica Now Display",
+  "monospaceFontFamily": "Comic Code Ligatures",
+  "theme": "obsidian",
+  "accentColor": "",
+  "showViewHeader": true
+}
