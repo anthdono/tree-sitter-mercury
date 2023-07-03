@@ -1,13 +1,12 @@
 (comment) @comment
 
 (keyword) @keyword
-; (conditional) @conditional
 
 (number) @number
 
 (builtin_type) @type
 
-; (variable) @variable
+(variable) @variable
 
 ; (variable) @variable
 ; (custom_type) @text

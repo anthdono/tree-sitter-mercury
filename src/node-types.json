@@ -56,11 +56,15 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
-          "type": "predicate",
+          "type": "arguments",
+          "named": true
+        },
+        {
+          "type": "identifier",
           "named": true
         }
       ]
@@ -89,6 +93,10 @@
       "multiple": false,
       "required": true,
       "types": [
+        {
+          "type": "implementation_declaration",
+          "named": true
+        },
         {
           "type": "import_declaration",
           "named": true
@@ -126,6 +134,25 @@
     "type": "identifier",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "implementation_declaration",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "declaration_operator",
+          "named": true
+        },
+        {
+          "type": "keyword",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "import_declaration",
@@ -246,37 +273,6 @@
       "types": [
         {
           "type": "parameter",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "predicate",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "arguments",
-          "named": true
-        },
-        {
-          "type": "determinism",
-          "named": true
-        },
-        {
-          "type": "end",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "variable",
           "named": true
         }
       ]

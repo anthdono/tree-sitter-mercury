@@ -13,7 +13,8 @@ module.exports = grammar({
                 $.type_declaration,
                 $.interface_declaration,
                 $.predicate_declaration,
-                $.import_declaration
+                $.import_declaration,
+                $.implementation_declaration
             ),
 
         import_declaration: ($) =>
@@ -26,6 +27,9 @@ module.exports = grammar({
 
         interface_declaration: ($) =>
             seq($.declaration_operator, alias("interface", $.keyword), "."),
+
+        implementation_declaration: ($) =>
+            seq($.declaration_operator, alias("implementation", $.keyword), "."),
 
         module_declaration: ($) =>
             seq(
@@ -69,6 +73,7 @@ module.exports = grammar({
                 $.end
             ),
 
+        // TODO: improve
         predicate: ($) =>
             seq(
                 repeat1(
@@ -120,7 +125,11 @@ module.exports = grammar({
         constraints: ($) =>
             seq("<=", "(", $.constraint, repeat(seq(",", $.constraint)), ")"),
 
-        constraint: ($) => choice($.predicate),
+        // TODO: add more constraint choices
+        // constraint: ($) => choice($.predicate),
+        constraint: ($) => seq(repeat($._identifier_or_chained_identifiers), $.arguments),
+
+
 
         type: ($) => choice($.builtin_type),
         // generic_type: ($) => seq(_identifier_or_chained_identifiers),

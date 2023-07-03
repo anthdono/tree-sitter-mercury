@@ -51,6 +51,10 @@
         {
           "type": "SYMBOL",
           "name": "import_declaration"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "implementation_declaration"
         }
       ]
     },
@@ -101,6 +105,28 @@
           "content": {
             "type": "STRING",
             "value": "interface"
+          },
+          "named": true,
+          "value": "keyword"
+        },
+        {
+          "type": "STRING",
+          "value": "."
+        }
+      ]
+    },
+    "implementation_declaration": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "declaration_operator"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "STRING",
+            "value": "implementation"
           },
           "named": true,
           "value": "keyword"
@@ -678,11 +704,18 @@
       ]
     },
     "constraint": {
-      "type": "CHOICE",
+      "type": "SEQ",
       "members": [
         {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_identifier_or_chained_identifiers"
+          }
+        },
+        {
           "type": "SYMBOL",
-          "name": "predicate"
+          "name": "arguments"
         }
       ]
     },
